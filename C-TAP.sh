@@ -14,12 +14,12 @@ for m in $file
     ((++o))
     echo "$o of $p movie file(s)"
     
-    echo "Making Mick West redundant, processing ONI FOIA files..."
+    echo "Processing ONI FOIA files..."
     FileName="${Prefix}.${type}"
     rsync -Ph ${path}/${FileName} .
     mkdir -p bitmaps
     
-    echo "Repaying TTSA investors, straightening Uri Gellar's spoons..."
+    echo "Reverse engineering Roswell neural interface..."
     cd bitmaps/
     ffmpeg -hide_banner -an -i ../${FileName} thumb%06d.bmp
     f=`ls -alth | wc -l`
@@ -36,7 +36,7 @@ for m in $file
     u=0; v=0
     w=30
     t=$((f/w))
-    echo "Removing any quantum woo; reticulating splines..."
+    echo "Removing quantum fog; reticulating splines..."
     while [ $u -lt $f ]
     do
 	./ImageProc.exe $u $t $CLOUD_COVER >> $Input 2>> ${Prefix}.err
@@ -64,7 +64,7 @@ for m in $file
 	u=0; v=0
 	t=$((f/w))
 	rm $Input
-	echo "Cloud cover detected. Starting over..."
+	echo "Cloud cover detected. Always bring a towel. Starting over..."
 	while [ $u -lt $f ]
 	do
             ./ImageProc.exe $u $t 1 >> $Input 2> /dev/null
@@ -72,7 +72,7 @@ for m in $file
             echo Phase 1A: Part $v of $w Done
 	    if [ $v -gt $w ]
             then
-		echo "Don't panic -- there was a remainder from the division!"
+		echo "Don't panic! There was a remainder from the division..."
             fi
             u=$((u+t))
 	    if [ $((u+t)) -gt $f ]
@@ -92,7 +92,7 @@ for m in $file
     n=`more ${Output} | wc -l`
     if [ $n -gt $((7*f/100)) ] || [ $CLOUD_COVER == 1 ]
     then
-	echo "Part deux: electric boogaloo..."
+	echo "Part Deux: CLose Encounters..."
 	rm $Output
 	./ImageProc.exe $Input $f 0.99 > $Output
 	n=`more ${Output} | wc -l`
@@ -101,10 +101,10 @@ for m in $file
     
     if [ $n -gt $((f/2)) ] || [ $n -eq 0 ]
     then
-	rm -f ${FileName}; rm -f ImageProc.exe; echo "Mending Avi's hurt feelings..."; rm -rf bitmaps/; continue
+	rm -f ${FileName}; rm -f ImageProc.exe; echo "Opening doors to first contact ..."; rm -rf bitmaps/; continue
     fi
     
-    echo "Logging range, deploying Little Green Men.."
+    echo "Logging range, deploying foo fighters ..."
     cat ${Output} | while read evt frame extr x y prob
     do
 	((++frame))
@@ -143,17 +143,17 @@ for m in $file
 	eval $string
     done
     
-    echo "Breaking Lue's NDA..."
+    echo "Taking nuclear launch sites offline..."
     cd bitmaps/
     ext="MP4" #NOT same as type above!
     #mogrify -resize 640x360 "*" *.bmp
     #mogrify -format jpg *.bmp
     ffmpeg -r 60 -f image2 -pattern_type glob -i 'pic*.bmp' -vcodec libx264 -crf 25 -pix_fmt yuv420p ${Prefix}.${ext}
     
-    echo "Cleaning detritus..."
+    echo "Calling in MIB cleanup crew, deploying neuralyzers..."
     cd ../
     mv bitmaps/${Prefix}.${ext} .
     rm -rf ${FileName} ImageProc.exe *.cpp~ *.sh~ *.err bitmaps/
-    echo "Cosmic consciousness has been achieved!!"
+    echo "You saved the galaxy!!"
     
 done
